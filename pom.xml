@@ -8,17 +8,32 @@
 	<artifactId>datastax-kafka-example</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	
+	<properties>
+		<dse.driver.version>1.7.0</dse.driver.version>
+		<dse.version>6.0.3</dse.version>
+		<kafka.version>0.8.1</kafka.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.datastax.cassandra</groupId>
 			<artifactId>cassandra-driver-core</artifactId>
-			<version>1.0.5</version>
-		</dependency>	
+			<version>${dse.driver.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.datastax.dse</groupId>
+			<artifactId>dse-java-driver-mapping</artifactId>
+			<version>${dse.driver.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.datastax.dse</groupId>
+			<artifactId>dse-java-driver-extras</artifactId>
+			<version>${dse.driver.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka_2.8.0</artifactId>
-			<version>0.8.0-beta1</version>
+			<artifactId>kafka_2.10</artifactId>
+			<version>$(kafka.version)</version>
 		</dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
