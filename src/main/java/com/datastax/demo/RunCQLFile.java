@@ -79,7 +79,9 @@ public abstract class RunCQLFile {
 
 	
 	void shutdown() {
-		session.shutdown();
-		cluster.shutdown();
+		//session.shutdown();
+		session.close();
+		//cluster.shutdown();
+		cluster.close();
 	}
 }

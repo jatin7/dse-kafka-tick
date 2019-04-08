@@ -7,7 +7,6 @@ import java.util.Random;
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
-
 import com.datastax.demo.utils.PropertyHelper;
 import com.datastax.tickdata.DataLoader;
 import com.datastax.tickdata.producer.TickGenerator.TickValue;

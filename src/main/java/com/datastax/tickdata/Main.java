@@ -72,7 +72,7 @@ public class Main {
 		ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
 
 		scheduledExecutorService.scheduleWithFixedDelay(new Runnable() {
-			@Override
+
 			public void run() {
 				Log.info(new Date().toString() + "-Generated " + consumer.getTicksGenerated() + " ticks");
 				Log.info("Messages left to send " + (queueTickData.size()));
@@ -90,7 +90,6 @@ public class Main {
 			this.queue = queue;
 		}
 
-		@Override
 		public void run() {
 			List<TickData> list;
 			while(true){				

@@ -1,10 +1,13 @@
 package com.datastax.tickdata;
 
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.joda.time.DateTime;
+//import com.datastax.driver.core.LocalDate;
+import org.joda.time.*;
 
 import com.datastax.driver.core.BoundStatement;
 import com.datastax.driver.core.Cluster;
@@ -44,14 +47,17 @@ public class TickDataDao {
 		
 		for (TickData tickData : list) {
 			
-			DateTime dateTime = DateTime.now();		
+			DateTime dateTime = DateTime.now();
+
 			String month = fillNumber(dateTime.getMonthOfYear());
 			String day = fillNumber(dateTime.getDayOfMonth());
 			
 			String symbolWithDate = tickData.getKey() + "-" + dateTime.getYear() + "-" + month + "-" + day;
 			
 			boundStmt.setString("symbol", symbolWithDate);
-			boundStmt.setDate("date", dateTime.toDate());
+			//boundStmt.setDate("date", dateTime.toLocalDate());
+			boundStmt.setString("symbol", dateTime.toLocalDate().toString());
+
 			boundStmt.setDouble("value", tickData.getValue());
 
 			results.add(session.executeAsync(boundStmt));
