@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="datastax-kafka-example" target="1.5" />
+      <module name="datastax-kafka-example" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

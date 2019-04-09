@@ -1,4 +1,4 @@
-create keyspace datastax_tickdata_demo WITH replication = {'class': 'NetworkTopologyStrategy', 'DC1': 1, 'DC2' : 1, 'DC3' : 1};
+create keyspace datastax_tickdata_demo WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1' };
 
 use datastax_tickdata_demo; 
 

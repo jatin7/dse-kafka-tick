@@ -10,14 +10,15 @@
 	<packaging>jar</packaging>
 	<properties>
 		<dse.driver.version>1.7.0</dse.driver.version>
-		<dse.version>6.0.3</dse.version>
+		<dse.version>6.0.6</dse.version>
 		<kafka.version>0.8.1</kafka.version>
+		<jetty.version></jetty.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.datastax.cassandra</groupId>
-			<artifactId>cassandra-driver-core</artifactId>
+			<groupId>com.datastax.dse</groupId>
+			<artifactId>dse-java-driver-core</artifactId>
 			<version>${dse.driver.version}</version>
 		</dependency>
 		<dependency>
